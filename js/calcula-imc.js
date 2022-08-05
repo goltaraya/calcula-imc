@@ -51,3 +51,11 @@ function validaAltura(altura){
     return true;
   }
 }
+
+function validaGordura(gordura){
+  if(gordura <= 0 || gordura >= 100){
+    return false;
+  } else {
+    return true;
+  }
+}
