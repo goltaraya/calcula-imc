@@ -8,23 +8,25 @@ botao.addEventListener("click", function (event) {
   var paciente = obtemPacienteDoFormulario(form);
   console.log(paciente);
 
-  // Criando as TRs e as TDs do paciente
-  var pacienteTr = montaTr(paciente);
-  var tabela = document.querySelector("#tabela-pacientes");
-
   // Validação de dados do paciente
   var erros = validaPaciente(paciente);
-  var mensagemErro = document.querySelector("#mensagem-erro");
   console.log(erros);
   if (erros.length > 0) {
     exibeMensagensDeErro(erros);
     return;
   }
-  tabela.appendChild(pacienteTr);
+  adicionaPacienteNaTabela(paciente);
+
   form.reset();
   var mensagensDeErro = document.querySelector("#mensagens-erro");
   mensagensDeErro.innerHTML = "";
 });
+
+function adicionaPacienteNaTabela(paciente) {
+  var pacienteTr = montaTr(paciente);
+  var tabela = document.querySelector("#tabela-pacientes");
+  tabela.appendChild(pacienteTr);
+}
 
 function obtemPacienteDoFormulario(form) {
   var paciente = {

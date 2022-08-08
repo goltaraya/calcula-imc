@@ -163,3 +163,9 @@ button[disabled=disabled], button:disabled {
 .invisivel {
 	display: none;
 }
+
+#erro-ajax {
+	font-size: 20px;
+	color: red;
+	font-weight: bold;
+}
